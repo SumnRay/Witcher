@@ -9,8 +9,8 @@ var database = client.db("witcher");
 database.dropDatabase()
 database = client.db("witcher");
 const witch = database.collection("witch");
-const result = await witch.insertOne({name:"Геральт"});
-console.log(`${result} documents were inserted`);
+const result = await witch.insertMany(data);
+console.log(`${result.insertedCount} documents were inserted`);
 } finally {
 await client.close();
 }
