@@ -1,7 +1,10 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/test');
+var mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/test')
+var schema = mongoose.Schema({ name: String })
+schema.methods.obmen = function(){
+console.log(this.get("name") + " Сказал 'Здравствуй'")
+}
+var Wit = mongoose.model('Wit', schema)
 
-const Wit = mongoose.model('Wit', { name: String });
-
-const wit = new Wit({name: 'Геральт'});
-wit.save().then(() => console.log('Здравствуй'));
+var Wit = new Wit({ name: 'Геральт' });
+Wit.save().then(() => Wit.obmen());
