@@ -14,4 +14,4 @@ created:{
     default:Date.now
     }
     })
-    module.exports.Witch = mongoose.model("Witch", witchSchema)
+    module.exports.Witches = mongoose.model("Witches", witchSchema)
