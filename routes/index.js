@@ -6,13 +6,25 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 router.get('/geralt', function(req, res, next) {
-  res.send("<h1>Страница Геральта</h1>")
+  res.render('witch', {
+  title: "Геральт",
+  picture: "images/geralt.jpg",
+  desc: "Главный герой произведения, ведьмак школы волка, охотник на чудовищ."
+  });
   });
   router.get('/yennifer', function(req, res, next) {
-    res.send("<h1>Страница Йеннифер</h1>")
+    res.render('witch', {
+    title: "Йеннифер",
+    picture: "images/yennifer.jpg",
+    desc: "Чародейка, супруга геральта."
+    });
     });
     router.get('/ciri', function(req, res, next) {
-      res.send("<h1>Страница Цири</h1>")
+      res.render('witch', {
+      title: "Цири",
+      picture: "images/ciri.jpg",
+      desc: "Приемная дочь геральта, ведьмачка."
+      });
       });
 
 module.exports = router;
