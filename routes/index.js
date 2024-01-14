@@ -9,6 +9,7 @@ router.get('/', async (req, res, next) => {
       res.cookie('greeting', 'Hi!!!').render('index', { title: 'Express', menu:menu });
       });
     const menu = await Witche.find({}, { _id: 0, title: 1, nick: 1 });
+    req.session.greeting = "Hi!!!"
     res.render('index', {
       title: 'Witchery',
       menu: menu
