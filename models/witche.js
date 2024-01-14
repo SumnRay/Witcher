@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
-var witchSchema = new Schema({
+var witcheSchema = new Schema({
 title: String,
 nick: {
 type: String,
@@ -14,4 +14,5 @@ created:{
     default:Date.now
     }
     })
-    module.exports.Witches = mongoose.model("Witches", witchSchema)
+    module.exports.Witche = mongoose.model("Witche", witcheSchema)
+    

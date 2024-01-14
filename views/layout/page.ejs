@@ -17,16 +17,12 @@ src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></sc
         <li class="nav-item">
         <a class="nav-link" href="http://localhost:3000/">Главная</a>
         </li>
-        <li class="nav-item">
-        <a class="nav-link" href="/witch/geralt">Геральт</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="/witch/yennifer">Йеннифер</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="/witch/ciri">Цири</a>
-        </li>
-        </ul>
+        <% menu.forEach(witchery => { %>
+            <li class="nav-item">
+              <a class="nav-link" href="/witchery/<%= witchery.nick %>"><%= witchery.title %></a>
+            </li>
+          <% }) %>
+    </ul>
         <ul class="navbar-nav navbar-right">
         <li>
         <a class="nav-link" href="">Войти</a>
