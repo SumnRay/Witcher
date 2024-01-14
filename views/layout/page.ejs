@@ -26,7 +26,13 @@ src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></sc
           <% })} %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logreg">Войти</a></li>
+            <%if(user){%>
+              <form action="/logout" method="post">
+            <li><button type="submit" class="btn btn-link">Выйти</button></li>
+            </form>
+            <% } else { %>
+            <li><a href="/logreg">Войти</a></li>
+            <% } %>
         </ul>
         </div>
         </nav>
