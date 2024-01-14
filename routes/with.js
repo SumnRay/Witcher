@@ -3,9 +3,9 @@ const router = express.Router();
 //const Witche = require("../models/witche").Witche;
 var async = require("async")
 var db = require('../mySQLConnect.js');
-//var checkAuth = require("./../middleware/checkAuth.js");
+var checkAuth = require("./../middleware/checkAuth.js");
 
-router.get("/:nick", function(req, res, next) {
+router.get("/:nick", checkAuth, function(req, res, next) {
   db.query(`SELECT * FROM witchers WHERE witchers.nick = '${req.params.nick}'`, (err,witchers) => {
   if(err) {
     console.log(err);
