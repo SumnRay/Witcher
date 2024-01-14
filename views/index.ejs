@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<% layout('./layout/page.ejs') %>
+
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+<p>Счетчик: <%= counter %></p>
+<% if(user) {%>
+    <h3>Добро пожаловать в братство ведьмаков</h3>
+    <% }else{ %>
+        <h3>Вступай в братство ведьмаков</h3>
+    <% } %>
