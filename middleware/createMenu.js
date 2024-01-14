@@ -1,4 +1,5 @@
 const Witche = require("./../models/witche").Witche;
+
 module.exports = async function(req, res, next) {
     try {
       res.locals.nav = [];
