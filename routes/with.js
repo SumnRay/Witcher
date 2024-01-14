@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 const Witche = require("../models/witche").Witche;
 var async = require("async")
+var checkAuth = require("./../middleware/checkAuth.js");
 
  /* GET users listing. */
 
 /* Страница героев */
-router.get('/:nick', async function(req, res, next) {
+router.get('/:nick', checkAuth, async function(req, res, next) {
   try {
     const [witche, witchery] = await Promise.all([
       Witche.findOne({ nick: req.params.nick }),
